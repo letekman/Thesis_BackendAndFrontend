@@ -1,0 +1,7 @@
+Thesis/
+Thesis_GUI/
+Thesis_Backend/__pycache__
+Thesis_Backend/.idea
+Thesis_Frontend/dist
+Thesis_Frontend/node_modules
+Thesis_Frontend/package-lock.json
