@@ -1,14 +1,13 @@
 export interface ContentProvider {
-    model_1: ModelDescription;
-    model_2: ModelDescription;
-    model_3: ModelDescription;
+    VGG19_Normal: ModelDescription;
+    VGG19_Dropout: ModelDescription;
+    VGG19_BatchNormalization: ModelDescription;
 }
 
 export type ModelDescription = {
     title: string;
     description: string;
     confuison_matrix_data: ConfuisonMatrixData[];
-
 }
 
 export interface ConfuisonMatrixData {
@@ -22,15 +21,15 @@ export interface Pair {
 }
 
 export enum ModelName {
-    model_1 = "model_1",
-    model_2 = "model_2",
-    model_3 = "model_3"
+    VGG19_Normal = "VGG19_Normal",
+    VGG19_Dropout = "VGG19_Dropout",
+    VGG19_BatchNormalization = "VGG19_BatchNormalization"
 }
 
 
 export const contentProvider: ContentProvider =
 {
-    "model_1": {
+    "VGG19_Normal": {
         "title": "VGG19",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed enim at enim tincidunt sollicitudin eu quis turpis. Donec nisl velit, ultrices ac lectus quis, molestie vestibulum sem. Maecenas varius porttitor elit nec fermentum. Nam vehicula risus sit amet velit sagittis, vel suscipit quam euismod. Duis mattis turpis ut lacinia mollis. Vivamus a massa vestibulum, consequat elit non, efficitur ipsum. Ut et neque eu mi placerat venenatis vitae quis elit. Suspendisse quis nunc ut purus egestas vestibulum semper nec ex. Vivamus commodo neque malesuada enim pellentesque posuere. Aliquam luctus vestibulum mauris, vel iaculis felis semper sed. Curabitur risus dui, viverra et hendrerit sit amet, luctus in tortor.\nPhasellus pulvinar sem eget facilisis porta. Mauris varius, lorem in maximus semper, tortor nibh ultrices urna, vitae tempor orci velit et lacus. Aenean condimentum tempus sem, eget tristique nisi efficitur vitae. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas sit amet sem eget nisl egestas viverra at et ex. Curabitur quis elit ac velit accumsan gravida nec eu dui. Donec ullamcorper mi eget malesuada suscipit.\n Nam quis lacus magna. Donec ultrices nec nunc facilisis venenatis. Praesent ornare interdum interdum. Aliquam eu nisl ac eros condimentum aliquet. Mauris rhoncus nisl nec felis sagittis malesuada. Curabitur pretium ultrices eros, nec maximus purus mollis nec. Donec venenatis, arcu vitae iaculis hendrerit, purus ante dapibus enim, non blandit nibh orci sed massa. Donec ut condimentum nulla, non semper nibh. Pellentesque cursus arcu tortor, sed vulputate velit facilisis non. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam eu felis libero. Etiam rutrum aliquet eleifend.\nQuisque venenatis ipsum id pellentesque commodo. Ut congue sapien eu rutrum scelerisque. Nullam ligula diam, ullamcorper molestie nunc sed, consectetur consectetur enim. Phasellus laoreet elementum est, eget luctus nulla finibus ut. In hac habitasse platea dictumst. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec feugiat ipsum luctus elementum malesuada. Morbi blandit sed nibh in gravida. Ut elementum turpis quis tellus imperdiet commodo. Cras nec risus massa. Nulla nibh eros, vulputate a justo in, aliquet maximus risus. Suspendisse eu tempus orci.",
         "confuison_matrix_data": [
@@ -161,7 +160,7 @@ export const contentProvider: ContentProvider =
             }
         ]
     },
-    "model_2": {
+    "VGG19_Dropout": {
         "title": "VGG19\nDropout layers",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed enim at enim tincidunt sollicitudin eu quis turpis. Donec nisl velit, ultrices ac lectus quis, molestie vestibulum sem. Maecenas varius porttitor elit nec fermentum. Nam vehicula risus sit amet velit sagittis, vel suscipit quam euismod. Duis mattis turpis ut lacinia mollis. Vivamus a massa vestibulum, consequat elit non, efficitur ipsum. Ut et neque eu mi placerat venenatis vitae quis elit. Suspendisse quis nunc ut purus egestas vestibulum semper nec ex. Vivamus commodo neque malesuada enim pellentesque posuere. Aliquam luctus vestibulum mauris, vel iaculis felis semper sed. Curabitur risus dui, viverra et hendrerit sit amet, luctus in tortor.\nPhasellus pulvinar sem eget facilisis porta. Mauris varius, lorem in maximus semper, tortor nibh ultrices urna, vitae tempor orci velit et lacus. Aenean condimentum tempus sem, eget tristique nisi efficitur vitae. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas sit amet sem eget nisl egestas viverra at et ex. Curabitur quis elit ac velit accumsan gravida nec eu dui. Donec ullamcorper mi eget malesuada suscipit.\n Nam quis lacus magna. Donec ultrices nec nunc facilisis venenatis. Praesent ornare interdum interdum. Aliquam eu nisl ac eros condimentum aliquet. Mauris rhoncus nisl nec felis sagittis malesuada. Curabitur pretium ultrices eros, nec maximus purus mollis nec. Donec venenatis, arcu vitae iaculis hendrerit, purus ante dapibus enim, non blandit nibh orci sed massa. Donec ut condimentum nulla, non semper nibh. Pellentesque cursus arcu tortor, sed vulputate velit facilisis non. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam eu felis libero. Etiam rutrum aliquet eleifend.\nQuisque venenatis ipsum id pellentesque commodo. Ut congue sapien eu rutrum scelerisque. Nullam ligula diam, ullamcorper molestie nunc sed, consectetur consectetur enim. Phasellus laoreet elementum est, eget luctus nulla finibus ut. In hac habitasse platea dictumst. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec feugiat ipsum luctus elementum malesuada. Morbi blandit sed nibh in gravida. Ut elementum turpis quis tellus imperdiet commodo. Cras nec risus massa. Nulla nibh eros, vulputate a justo in, aliquet maximus risus. Suspendisse eu tempus orci.",
         "confuison_matrix_data": [
@@ -292,8 +291,8 @@ export const contentProvider: ContentProvider =
             }
         ]
     },
-    "model_3": {
-        "title": "VGG19\nDropout layers\nBatch normalisation",
+    "VGG19_BatchNormalization": {
+        "title": "VGG19\nBatch normalisation layers",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed enim at enim tincidunt sollicitudin eu quis turpis. Donec nisl velit, ultrices ac lectus quis, molestie vestibulum sem. Maecenas varius porttitor elit nec fermentum. Nam vehicula risus sit amet velit sagittis, vel suscipit quam euismod. Duis mattis turpis ut lacinia mollis. Vivamus a massa vestibulum, consequat elit non, efficitur ipsum. Ut et neque eu mi placerat venenatis vitae quis elit. Suspendisse quis nunc ut purus egestas vestibulum semper nec ex. Vivamus commodo neque malesuada enim pellentesque posuere. Aliquam luctus vestibulum mauris, vel iaculis felis semper sed. Curabitur risus dui, viverra et hendrerit sit amet, luctus in tortor.\nPhasellus pulvinar sem eget facilisis porta. Mauris varius, lorem in maximus semper, tortor nibh ultrices urna, vitae tempor orci velit et lacus. Aenean condimentum tempus sem, eget tristique nisi efficitur vitae. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas sit amet sem eget nisl egestas viverra at et ex. Curabitur quis elit ac velit accumsan gravida nec eu dui. Donec ullamcorper mi eget malesuada suscipit.\n Nam quis lacus magna. Donec ultrices nec nunc facilisis venenatis. Praesent ornare interdum interdum. Aliquam eu nisl ac eros condimentum aliquet. Mauris rhoncus nisl nec felis sagittis malesuada. Curabitur pretium ultrices eros, nec maximus purus mollis nec. Donec venenatis, arcu vitae iaculis hendrerit, purus ante dapibus enim, non blandit nibh orci sed massa. Donec ut condimentum nulla, non semper nibh. Pellentesque cursus arcu tortor, sed vulputate velit facilisis non. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam eu felis libero. Etiam rutrum aliquet eleifend.\nQuisque venenatis ipsum id pellentesque commodo. Ut congue sapien eu rutrum scelerisque. Nullam ligula diam, ullamcorper molestie nunc sed, consectetur consectetur enim. Phasellus laoreet elementum est, eget luctus nulla finibus ut. In hac habitasse platea dictumst. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec feugiat ipsum luctus elementum malesuada. Morbi blandit sed nibh in gravida. Ut elementum turpis quis tellus imperdiet commodo. Cras nec risus massa. Nulla nibh eros, vulputate a justo in, aliquet maximus risus. Suspendisse eu tempus orci.",
         "confuison_matrix_data": [
             {

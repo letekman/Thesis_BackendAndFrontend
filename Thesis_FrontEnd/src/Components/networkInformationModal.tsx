@@ -1,8 +1,7 @@
 import React, { ReactElement } from "react";
 import styled from "styled-components";
 import { ConfusionMatrix } from "./confusionMatrix";
-import { contentProvider, ModelName } from "./contentProvider";
-
+import { contentProvider, ModelName } from "./contentProviderFile";
 
 
 type NetworkInformationModalProps = {
@@ -30,7 +29,6 @@ export const NetworkInformationModal = (props: NetworkInformationModalProps): Re
     return (
         <>
             <ContentWrapper>
-                {/* TODO: Fetch those data from backend. Retrive statistics about NN model from backend */}
                 <CenteredText>{contentProvider[props.modelName].title}</CenteredText>
                 <CenteredText>{contentProvider[props.modelName].description}</CenteredText>
                 <ConfusionMatrix data={contentProvider[props.modelName].confuison_matrix_data}></ConfusionMatrix>

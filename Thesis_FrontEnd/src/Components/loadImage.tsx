@@ -2,8 +2,8 @@ import { Checkbox, FormControlLabel } from "@mui/material";
 import React, { ChangeEvent, ReactElement, useState} from "react";
 import styled from "styled-components";
 import { ImgContainer } from "./app";
-import { buttonColor, secondaryColor } from "./configuration";
-import { CenterWrapper } from "./styledComponents";
+import { buttonColor, seaThemeColor } from "./configuration";
+import { CenterWrapper } from "./commonComponents";
 
 
 type LoadImageProps = {
@@ -18,7 +18,7 @@ type DragAndDropAreaProps = {
 }
 
 const DragAndDropArea = styled.div<DragAndDropAreaProps>`
-    background-color: ${secondaryColor};
+    background-color: ${seaThemeColor};
     height:250px;
     width:250px;
     color: black;
@@ -29,7 +29,7 @@ const DragAndDropArea = styled.div<DragAndDropAreaProps>`
     text-align: center;
     opacity: ${props => props.isFileOver ? '0.5' : '1'};
     border: ${props => props.isFileOver ? '5px solid black' : ''};
-    margin: 0 20px 20px 0;
+    margin: 0 0px 20px 0;
 `;
 
 const ButtonLoadImage = styled.label`
@@ -56,7 +56,6 @@ const ButtonLoadImage = styled.label`
     &:hover {
         border-color: rgba(255,255,255,1);
     }
-
 `;
 
 const DisableDragOver = styled(CenterWrapper)`
@@ -75,19 +74,16 @@ const InvisibleInput = styled.input`
     display: none;
 `;
 
-const ErrorParagrapg = styled.p`
+const ErrorParagraph = styled.p`
     color: red;
 `;
 
 
 export const LoadImage = (props: LoadImageProps): ReactElement => {
-  
-
     const [isCorrectType, setIsCorrectType] = useState(true);
-
     const [isFileOver, setIsFileOver] = useState(false);
-    
-    const possibleTypes = ['image/jpeg'];
+
+    const possibleTypes = ['image/jpeg', 'image/png', 'image/bmp'];
 
     const loadFileHandler = (f: File) => {
         if(possibleTypes.indexOf(f.type) === -1){
@@ -139,7 +135,7 @@ export const LoadImage = (props: LoadImageProps): ReactElement => {
         <>
             <DragAndDropArea isFileOver={isFileOver} onDragEnter={onDragEnterHandler} onDragLeave={onDragLeaveHandler} onDrop={onDropHandler} onDragOver={onDragHandler}>
                 <DisableDragOver>
-                    {props.imgPath === "" ? <><p>Drag and drop to upload image in jpg format </p> {!isCorrectType && <ErrorParagrapg>INCORECT FILE TYPE</ErrorParagrapg>} </>: <Img src={props.imgPath}></Img>}
+                    {props.imgPath === "" ? <><p>Drag and drop to upload image in jpg, bpm or png format </p> {!isCorrectType && <ErrorParagraph>INCORECT FILE TYPE</ErrorParagraph>} </>: <Img src={props.imgPath}></Img>}
                 </DisableDragOver>
             </DragAndDropArea>
             <InvisibleInput accept={possibleTypes.join(", ")} type="file" id="img" onChange={handleInputFilesUpload} />

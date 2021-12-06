@@ -2,11 +2,11 @@
 import React from "react";
 import { ReactElement } from "react";
 import styled from "styled-components";
-import { secondaryColor } from "./configuration";
+import { seaThemeColor } from "./configuration";
 
 
 const NavbarContainer = styled.div`
-    background-color: ${secondaryColor};
+    background-color: ${seaThemeColor};
     height: 8%;
     display:flex;
     justify-content: center;

@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
-import { primaryColor } from "./configuration";
-import { ConfuisonMatrixData } from "./contentProvider";
-import { CenterWrapper } from "./styledComponents";
+import { orangeThemeColor, navyBlueThemeColor } from "./configuration";
+import { ConfuisonMatrixData } from "./contentProviderFile";
+import { CenterWrapper } from "./commonComponents";
 import ReactApexChart from "react-apexcharts";
 
 
@@ -13,7 +13,7 @@ export const ConfusionMatrix = (props: ConfusionMatrixProps): ReactElement => {
     const options = {
         dataLabels: {
             style: {
-                colors: [primaryColor]
+                colors: [navyBlueThemeColor]
             }
         },
         chart: {
@@ -27,7 +27,7 @@ export const ConfusionMatrix = (props: ConfusionMatrixProps): ReactElement => {
                 enabled: false
             }
         },
-        colors: ['#e76f51'],
+        colors: [orangeThemeColor],
         xaxis: {
             type: 'category' as const,
             tickPlacement: 'between',
@@ -63,6 +63,5 @@ export const ConfusionMatrix = (props: ConfusionMatrixProps): ReactElement => {
         <CenterWrapper>
             <ReactApexChart options={options} series={series} type={"heatmap"} height={400} style={{ width: '90%' }} />
         </CenterWrapper >
-
     );
 }
