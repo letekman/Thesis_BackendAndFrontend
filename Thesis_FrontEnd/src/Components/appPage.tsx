@@ -10,26 +10,13 @@ import { ModelName } from "./contentProviderFile";
 
 
 
-const GlobalStyles = createGlobalStyle`
-    html, body {
-        margin: 0%;
-        min-height: 100%;
-        background-color: ${navyBlueThemeColor};
-        color: #FFFFFF;
-    }
-
-    #root {
-        height: 100vh;
-        font-family: "Lucida Console", "Courier New", monospace;
-    }    
-`;
 
 export type ImgContainer = {
     file: File | null
     src: string
 }
 
-const App: React.FunctionComponent = (): ReactElement => {
+const AppPage: React.FunctionComponent = (): ReactElement => {
 
     const sendInferRequest = (modelName: ModelName) => {
         const formData = new FormData();
@@ -47,13 +34,13 @@ const App: React.FunctionComponent = (): ReactElement => {
         });
     }
 
+    
+
     const [imgContainer, setImgContainer] = useState<ImgContainer>({ src: "", file: null });
     const [consent, setConsent] = useState(false);
 
     return (
         <>
-            <GlobalStyles />
-            <Navbar></Navbar>
             <CenterWrapper>
                 <LoadImage setImgContainer={setImgContainer} imgPath={imgContainer.src} consent={consent} setConsent={setConsent} ></LoadImage>
             </CenterWrapper>
@@ -65,4 +52,4 @@ const App: React.FunctionComponent = (): ReactElement => {
         </>
     )
 };
-export default App;
+export default AppPage;

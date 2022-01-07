@@ -2,22 +2,55 @@
 import React from "react";
 import { ReactElement } from "react";
 import styled from "styled-components";
+import { Button } from "./commonComponents";
 import { seaThemeColor } from "./configuration";
+
+
+type NavbarProps = {
+    setIntroPageState: (b: boolean) => void;
+    introPageState: Boolean;
+}
+
+const StyledImg = styled.img`
+    position: absolute; 
+    right: 0;
+ 
+
+    height:9%;
+
+
+`;
+
+
 
 
 const NavbarContainer = styled.div`
     background-color: ${seaThemeColor};
-    height: 8%;
+    height: 10%;
     display:flex;
     justify-content: center;
     align-items: center;
 `;
 
 
-export const Navbar = (): ReactElement => {
+const HomepageButton = styled(Button)`
+    position: absolute; 
+    left: 10px;
+    border-radius:0;
+`;
+
+const StyledP = styled.div`
+
+
+
+`;
+
+export const Navbar = (props: NavbarProps): ReactElement => {
     return (
         <NavbarContainer>
-            <p>Application for detecting the rethinopathy based on the fundus image</p>
+            {!props.introPageState && <HomepageButton onClick={() => props.setIntroPageState(true)}>Go to startpage</HomepageButton> }
+            <StyledP>Application for detecting the rethinopathy based on the fundus image</StyledP>
+            <StyledImg src="./assets/pl_logo.png"></StyledImg>
         </NavbarContainer >
     )
 }

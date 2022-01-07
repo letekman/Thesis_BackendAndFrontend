@@ -35,6 +35,14 @@ export const ConfusionMatrix = (props: ConfusionMatrixProps): ReactElement => {
                 style: {
                     colors: 'white'
                 }
+            },
+            position: 'bottom',
+            title: {
+                text: "Predicted labels",
+                style: {
+                    color: 'white',
+                    fontSize: '16px'
+                },
             }
         },
         yaxis: {
@@ -42,16 +50,29 @@ export const ConfusionMatrix = (props: ConfusionMatrixProps): ReactElement => {
                 style: {
                     colors: 'white'
                 }
+            },
+            title: {
+                text: "True labels",
+                style: {
+                    color: 'white',
+                    fontSize: '16px'
+                }
             }
         },
         tooltip: {
             enabled: false
         },
         title: {
-            text: `Confusion matrix for model obtained during training - FAKE DATA`,
+            text: `Confusion matrix for model obtained during training`,
             align: 'center' as const,
             style: {
-                color: 'white'
+                color: 'white',
+                fontSize: '20px'
+            }
+        },
+        plotOptions: {
+            heatmap: {
+                distributed: true
             }
         }
     };

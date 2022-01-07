@@ -1,11 +1,12 @@
-import App from "./Components/app"
+
 import React from "react";
 import ReactDOM from "react-dom";
+import StartPage from "./Components/startPage";
 
 
 ReactDOM.render(
     <React.StrictMode>
-      <App />
+      <StartPage />
     </React.StrictMode>,
     document.getElementById("root")
   );

@@ -1,11 +1,11 @@
-import React, { ReactElement, useState } from "react";
-import { CenterWrapper } from "./commonComponents";
+import React, { ReactElement, useEffect, useState } from "react";
+import { Button, CenterWrapper } from "./commonComponents";
 import Loader from "react-loader-spinner";
 import { Box, Modal, Paper } from "@material-ui/core";
 import { contentProvider, ModelName } from "./contentProviderFile";
 import { NetworkInformationModal } from "./networkInformationModal";
 import styled from "styled-components";
-import { buttonColor, orangeThemeColor } from "./configuration";
+import {  orangeThemeColor } from "./configuration";
 
 type NeuralNetworkProps = {
     modelName: ModelName
@@ -17,38 +17,6 @@ type Response = {
     result: string
 }
 
-
-const Button = styled.button`
-  display:inline-block;
-    background-color:${buttonColor};
-    padding:0.3em 1.2em;
-    margin: 15px;
-    border:0.16em solid rgba(255,255,255,0);
-    border-radius:2em;
-    box-sizing: border-box;
-    text-decoration:none;
-    font-family:'Roboto',sans-serif;
-    font: 5vmin;
-    color:#FFFFFF;
-    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
-    text-align:center;
-    transition: all 0.2s;
-
-    &:active {
-        box-shadow: box-shadow:
-          7px 6px 28px 1px rgba(0, 0, 0, 0.24);
-        transform: translateY(4px);
-     
-    }
-
-    &:hover {
-        border-color: rgba(255,255,255,1);
-    }
-
-    &:disabled {
-        border:0.16em solid rgba(255,255,255,0);
-        background-color: rgba(241, 78, 78, 0.2);
-    }`;
 
 const StyledPaper = styled(Paper)`
     background-color: rgb(244 162 97 / 86%) !important;
@@ -62,6 +30,13 @@ const StyledPaper = styled(Paper)`
         transform: scale(1.1);
     }
 
+`;
+
+const ResultDescription = styled.p`
+    white-space: pre-line;
+    text-align: center;  
+    line-height: 1.2;
+    margin: 0;
 `;
 
 const NetworkDescription = styled.p`
@@ -80,6 +55,23 @@ const StyledImg = styled.img`
 
 `;
 
+const mapResultToText = (result: string) : string => {
+    switch(result) {
+        case "0":
+            return "0 \n No DR"
+        case "1":
+            return "1 \n Mild"
+        case "2":
+            return '2 \n  Moderate'
+        case "3":
+            return "3 \n Severe"
+        case "4":
+            return "4\n Proliferative DR"
+        default:
+            return result
+    }
+}
+
 export const NeuralNetwork = (props: NeuralNetworkProps): ReactElement => {
 
     const [isInferencing, setIsInfereced] = useState(false);
@@ -90,6 +82,7 @@ export const NeuralNetwork = (props: NeuralNetworkProps): ReactElement => {
         setIsInfereced(true);
         setResult("");
         const result = await props.sendInferRequest(props.modelName) as Response;
+    
         setIsInfereced(false);
         setResult(result.result);
     }
@@ -102,6 +95,10 @@ export const NeuralNetwork = (props: NeuralNetworkProps): ReactElement => {
         setIsModalOpened(false);
     }
 
+    useEffect(() => {
+        setResult("");
+    }, [props.isFileLoaded])
+
     return (
         <CenterWrapper style={{width: '300px'}}>
             <StyledPaper elevation={15} onClick={onNetworkImgClickHandler} >
@@ -110,7 +107,7 @@ export const NeuralNetwork = (props: NeuralNetworkProps): ReactElement => {
                     <StyledImg src="./assets/NN_icon.png"></StyledImg>
                 </CenterWrapper>
             </StyledPaper>
-            {result.length > 0 && result}
+            {result.length > 0 && <ResultDescription>{mapResultToText(result)}</ResultDescription>}
             <Loader
                 visible={isInferencing}
                 type="ThreeDots"

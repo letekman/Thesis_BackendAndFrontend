@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react";
 import styled from "styled-components";
+import { CenterWrapper } from "./commonComponents";
 import { ConfusionMatrix } from "./confusionMatrix";
 import { contentProvider, ModelName } from "./contentProviderFile";
 
@@ -23,6 +24,14 @@ const CenteredText = styled.p`
     text-align: center;
 `;
 
+const NNArchitectureDisplay = styled.img`
+
+`;
+
+const NNArchitectureDisplayWrapper = styled(CenterWrapper)`
+    margin-top: -75px;
+`
+
 
 export const NetworkInformationModal = (props: NetworkInformationModalProps): ReactElement => {
 
@@ -30,9 +39,10 @@ export const NetworkInformationModal = (props: NetworkInformationModalProps): Re
         <>
             <ContentWrapper>
                 <CenteredText>{contentProvider[props.modelName].title}</CenteredText>
-                <CenteredText>{contentProvider[props.modelName].description}</CenteredText>
+                <NNArchitectureDisplayWrapper>
+                    <NNArchitectureDisplay src={contentProvider[props.modelName].archFilePath} alt="Architecture diagram"></NNArchitectureDisplay>
+                </NNArchitectureDisplayWrapper>
                 <ConfusionMatrix data={contentProvider[props.modelName].confuison_matrix_data}></ConfusionMatrix>
-                <CenteredText>TODO: Add some graphical represtantion</CenteredText>
             </ContentWrapper>
         </>
     )

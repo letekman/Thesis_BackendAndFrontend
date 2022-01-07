@@ -6,7 +6,7 @@ export interface ContentProvider {
 
 export type ModelDescription = {
     title: string;
-    description: string;
+    archFilePath: string;
     confuison_matrix_data: ConfuisonMatrixData[];
 }
 
@@ -31,129 +31,130 @@ export const contentProvider: ContentProvider =
 {
     "VGG19_Normal": {
         "title": "VGG19",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed enim at enim tincidunt sollicitudin eu quis turpis. Donec nisl velit, ultrices ac lectus quis, molestie vestibulum sem. Maecenas varius porttitor elit nec fermentum. Nam vehicula risus sit amet velit sagittis, vel suscipit quam euismod. Duis mattis turpis ut lacinia mollis. Vivamus a massa vestibulum, consequat elit non, efficitur ipsum. Ut et neque eu mi placerat venenatis vitae quis elit. Suspendisse quis nunc ut purus egestas vestibulum semper nec ex. Vivamus commodo neque malesuada enim pellentesque posuere. Aliquam luctus vestibulum mauris, vel iaculis felis semper sed. Curabitur risus dui, viverra et hendrerit sit amet, luctus in tortor.\nPhasellus pulvinar sem eget facilisis porta. Mauris varius, lorem in maximus semper, tortor nibh ultrices urna, vitae tempor orci velit et lacus. Aenean condimentum tempus sem, eget tristique nisi efficitur vitae. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas sit amet sem eget nisl egestas viverra at et ex. Curabitur quis elit ac velit accumsan gravida nec eu dui. Donec ullamcorper mi eget malesuada suscipit.\n Nam quis lacus magna. Donec ultrices nec nunc facilisis venenatis. Praesent ornare interdum interdum. Aliquam eu nisl ac eros condimentum aliquet. Mauris rhoncus nisl nec felis sagittis malesuada. Curabitur pretium ultrices eros, nec maximus purus mollis nec. Donec venenatis, arcu vitae iaculis hendrerit, purus ante dapibus enim, non blandit nibh orci sed massa. Donec ut condimentum nulla, non semper nibh. Pellentesque cursus arcu tortor, sed vulputate velit facilisis non. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam eu felis libero. Etiam rutrum aliquet eleifend.\nQuisque venenatis ipsum id pellentesque commodo. Ut congue sapien eu rutrum scelerisque. Nullam ligula diam, ullamcorper molestie nunc sed, consectetur consectetur enim. Phasellus laoreet elementum est, eget luctus nulla finibus ut. In hac habitasse platea dictumst. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec feugiat ipsum luctus elementum malesuada. Morbi blandit sed nibh in gravida. Ut elementum turpis quis tellus imperdiet commodo. Cras nec risus massa. Nulla nibh eros, vulputate a justo in, aliquet maximus risus. Suspendisse eu tempus orci.",
+        "archFilePath": "assets\\vgg19_arch_normal.svg",
         "confuison_matrix_data": [
             {
-                "name": "1",
+                "name": "0 (No DR)",
                 "data": [
                     {
-                        "x": "1",
-                        "y": 2
+                        "x": "0 (No DR)",
+                        "y": 170
                     },
                     {
-                        "x": "2",
-                        "y": 6
+                        "x": "1 (Mild)",
+                        "y": 8
                     },
                     {
-                        "x": "3",
-                        "y": 10
+                        "x": "2 (Moderate)",
+                        "y": 1
                     },
                     {
-                        "x": "4",
-                        "y": 12
+                        "x": "3 (Severe)",
+                        "y": 0
                     },
                     {
-                        "x": "5",
-                        "y": 9
+                        "x": "4 (Proliferative DR)",
+                        "y": 0
                     }
                 ]
             },
             {
-                "name": "2",
+                "name": "1 (Mild)",
                 "data": [
                     {
-                        "x": "1",
-                        "y": 2
+                        "x": "0 (No DR)",
+                        "y": 3
                     },
                     {
-                        "x": "2",
-                        "y": 6
+                        "x": "1 (Mild)",
+                        "y": 22
                     },
                     {
-                        "x": "3",
-                        "y": 10
+                        "x": "2 (Moderate)",
+                        "y": 13
                     },
                     {
-                        "x": "4",
-                        "y": 12
+                        "x": "3 (Severe)",
+                        "y": 0
                     },
                     {
-                        "x": "5",
-                        "y": 9
+                        "x": "4 (Proliferative DR)",
+                        "y": 1
+                    }
+                ]
+            },
+                
+            {
+                "name": "2 (Moderate)",
+                "data": [
+                    {
+                        "x": "0 (No DR)",
+                        "y": 0
+                    },
+                    {
+                        "x": "1 (Mild)",
+                        "y": 19
+                    },
+                    {
+                        "x": "2 (Moderate)",
+                        "y": 65
+                    },
+                    {
+                        "x": "3 (Severe)",
+                        "y": 7
+                    },
+                    {
+                        "x": "4 (Proliferative DR)",
+                        "y": 3
                     }
                 ]
             },
             {
-                "name": "3",
+                "name": "3 (Severe)",
                 "data": [
                     {
-                        "x": "1",
-                        "y": 2
+                        "x": "0 (No DR)",
+                        "y": 0
                     },
                     {
-                        "x": "2",
-                        "y": 6
+                        "x": "1 (Mild)",
+                        "y": 0
                     },
                     {
-                        "x": "3",
+                        "x": "2 (Moderate)",
                         "y": 10
                     },
                     {
-                        "x": "4",
-                        "y": 12
+                        "x": "3 (Severe)",
+                        "y": 9
                     },
                     {
-                        "x": "5",
-                        "y": 9
+                        "x": "4 (Proliferative DR)",
+                        "y": 2
                     }
                 ]
             },
             {
-                "name": "4",
+                "name": "4 (Proliferative DR)",
                 "data": [
                     {
-                        "x": "1",
-                        "y": 2
+                        "x": "0 (No DR)",
+                        "y": 0
                     },
                     {
-                        "x": "2",
-                        "y": 6
+                        "x": "1 (Mild)",
+                        "y": 5
                     },
                     {
-                        "x": "3",
-                        "y": 10
+                        "x": "2 (Moderate)",
+                        "y": 13
                     },
                     {
-                        "x": "4",
-                        "y": 12
+                        "x": "3 (Severe)",
+                        "y": 7
                     },
                     {
-                        "x": "5",
-                        "y": 9
-                    }
-                ]
-            },
-            {
-                "name": "5",
-                "data": [
-                    {
-                        "x": "1",
-                        "y": 2
-                    },
-                    {
-                        "x": "2",
-                        "y": 6
-                    },
-                    {
-                        "x": "3",
-                        "y": 10
-                    },
-                    {
-                        "x": "4",
-                        "y": 12
-                    },
-                    {
-                        "x": "5",
+                        "x": "4 (Proliferative DR)",
                         "y": 9
                     }
                 ]
@@ -162,261 +163,263 @@ export const contentProvider: ContentProvider =
     },
     "VGG19_Dropout": {
         "title": "VGG19\nDropout layers",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed enim at enim tincidunt sollicitudin eu quis turpis. Donec nisl velit, ultrices ac lectus quis, molestie vestibulum sem. Maecenas varius porttitor elit nec fermentum. Nam vehicula risus sit amet velit sagittis, vel suscipit quam euismod. Duis mattis turpis ut lacinia mollis. Vivamus a massa vestibulum, consequat elit non, efficitur ipsum. Ut et neque eu mi placerat venenatis vitae quis elit. Suspendisse quis nunc ut purus egestas vestibulum semper nec ex. Vivamus commodo neque malesuada enim pellentesque posuere. Aliquam luctus vestibulum mauris, vel iaculis felis semper sed. Curabitur risus dui, viverra et hendrerit sit amet, luctus in tortor.\nPhasellus pulvinar sem eget facilisis porta. Mauris varius, lorem in maximus semper, tortor nibh ultrices urna, vitae tempor orci velit et lacus. Aenean condimentum tempus sem, eget tristique nisi efficitur vitae. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas sit amet sem eget nisl egestas viverra at et ex. Curabitur quis elit ac velit accumsan gravida nec eu dui. Donec ullamcorper mi eget malesuada suscipit.\n Nam quis lacus magna. Donec ultrices nec nunc facilisis venenatis. Praesent ornare interdum interdum. Aliquam eu nisl ac eros condimentum aliquet. Mauris rhoncus nisl nec felis sagittis malesuada. Curabitur pretium ultrices eros, nec maximus purus mollis nec. Donec venenatis, arcu vitae iaculis hendrerit, purus ante dapibus enim, non blandit nibh orci sed massa. Donec ut condimentum nulla, non semper nibh. Pellentesque cursus arcu tortor, sed vulputate velit facilisis non. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam eu felis libero. Etiam rutrum aliquet eleifend.\nQuisque venenatis ipsum id pellentesque commodo. Ut congue sapien eu rutrum scelerisque. Nullam ligula diam, ullamcorper molestie nunc sed, consectetur consectetur enim. Phasellus laoreet elementum est, eget luctus nulla finibus ut. In hac habitasse platea dictumst. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec feugiat ipsum luctus elementum malesuada. Morbi blandit sed nibh in gravida. Ut elementum turpis quis tellus imperdiet commodo. Cras nec risus massa. Nulla nibh eros, vulputate a justo in, aliquet maximus risus. Suspendisse eu tempus orci.",
+        "archFilePath": "assets\\vgg19_arch_dropout.svg",
         "confuison_matrix_data": [
             {
-                "name": "1",
+                "name": "0 (No DR)",
                 "data": [
                     {
-                        "x": "1",
+                        "x": "0 (No DR)",
+                        "y": 176
+                    },
+                    {
+                        "x": "1 (Mild)",
+                        "y": 5
+                    },
+                    {
+                        "x": "2 (Moderate)",
                         "y": 2
                     },
                     {
-                        "x": "2",
-                        "y": 53
+                        "x": "3 (Severe)",
+                        "y": 0
                     },
                     {
-                        "x": "3",
-                        "y": 10
-                    },
-                    {
-                        "x": "4",
-                        "y": 124
-                    },
-                    {
-                        "x": "5",
-                        "y": 95
+                        "x": "4 (Proliferative DR)",
+                        "y": 0
                     }
                 ]
             },
             {
-                "name": "2",
+                "name": "1 (Mild)",
                 "data": [
                     {
-                        "x": "1",
-                        "y": 12
+                        "x": "0 (No DR)",
+                        "y": 5
                     },
                     {
-                        "x": "2",
-                        "y": 86
+                        "x": "1 (Mild)",
+                        "y": 18
                     },
                     {
-                        "x": "3",
-                        "y": 310
+                        "x": "2 (Moderate)",
+                        "y": 18
                     },
                     {
-                        "x": "4",
-                        "y": 132
+                        "x": "3 (Severe)",
+                        "y": 0
                     },
                     {
-                        "x": "5",
-                        "y": 94
+                        "x": "4 (Proliferative DR)",
+                        "y": 0
+                    }
+                ]
+            },
+                
+            {
+                "name": "2 (Moderate)",
+                "data": [
+                    {
+                        "x": "0 (No DR)",
+                        "y": 3
+                    },
+                    {
+                        "x": "1 (Mild)",
+                        "y": 13
+                    },
+                    {
+                        "x": "2 (Moderate)",
+                        "y": 75
+                    },
+                    {
+                        "x": "3 (Severe)",
+                        "y": 1
+                    },
+                    {
+                        "x": "4 (Proliferative DR)",
+                        "y": 1
                     }
                 ]
             },
             {
-                "name": "3",
+                "name": "3 (Severe)",
                 "data": [
                     {
-                        "x": "1",
-                        "y": 22
+                        "x": "0 (No DR)",
+                        "y": 0
                     },
                     {
-                        "x": "2",
-                        "y": 62
+                        "x": "1 (Mild)",
+                        "y": 1
                     },
                     {
-                        "x": "3",
-                        "y": 107
+                        "x": "2 (Moderate)",
+                        "y": 13
                     },
                     {
-                        "x": "4",
-                        "y": 127
+                        "x": "3 (Severe)",
+                        "y": 2
                     },
                     {
-                        "x": "5",
-                        "y": 92
-                    }
-                ]
-            },
-            {
-                "name": "4",
-                "data": [
-                    {
-                        "x": "1",
-                        "y": 48
-                    },
-                    {
-                        "x": "2",
-                        "y": 4
-                    },
-                    {
-                        "x": "3",
-                        "y": 170
-                    },
-                    {
-                        "x": "4",
-                        "y": 12
-                    },
-                    {
-                        "x": "5",
+                        "x": "4 (Proliferative DR)",
                         "y": 6
                     }
                 ]
             },
             {
-                "name": "5",
+                "name": "4 (Proliferative DR)",
                 "data": [
                     {
-                        "x": "1",
-                        "y": 82
+                        "x": "0 (No DR)",
+                        "y": 0
                     },
                     {
-                        "x": "2",
-                        "y": 6
+                        "x": "1 (Mild)",
+                        "y": 2
                     },
                     {
-                        "x": "3",
-                        "y": 110
-                    },
-                    {
-                        "x": "4",
+                        "x": "2 (Moderate)",
                         "y": 12
                     },
                     {
-                        "x": "5",
-                        "y": 52
+                        "x": "3 (Severe)",
+                        "y": 0
+                    },
+                    {
+                        "x": "4 (Proliferative DR)",
+                        "y": 14
                     }
                 ]
             }
         ]
     },
     "VGG19_BatchNormalization": {
-        "title": "VGG19\nBatch normalisation layers",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed enim at enim tincidunt sollicitudin eu quis turpis. Donec nisl velit, ultrices ac lectus quis, molestie vestibulum sem. Maecenas varius porttitor elit nec fermentum. Nam vehicula risus sit amet velit sagittis, vel suscipit quam euismod. Duis mattis turpis ut lacinia mollis. Vivamus a massa vestibulum, consequat elit non, efficitur ipsum. Ut et neque eu mi placerat venenatis vitae quis elit. Suspendisse quis nunc ut purus egestas vestibulum semper nec ex. Vivamus commodo neque malesuada enim pellentesque posuere. Aliquam luctus vestibulum mauris, vel iaculis felis semper sed. Curabitur risus dui, viverra et hendrerit sit amet, luctus in tortor.\nPhasellus pulvinar sem eget facilisis porta. Mauris varius, lorem in maximus semper, tortor nibh ultrices urna, vitae tempor orci velit et lacus. Aenean condimentum tempus sem, eget tristique nisi efficitur vitae. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas sit amet sem eget nisl egestas viverra at et ex. Curabitur quis elit ac velit accumsan gravida nec eu dui. Donec ullamcorper mi eget malesuada suscipit.\n Nam quis lacus magna. Donec ultrices nec nunc facilisis venenatis. Praesent ornare interdum interdum. Aliquam eu nisl ac eros condimentum aliquet. Mauris rhoncus nisl nec felis sagittis malesuada. Curabitur pretium ultrices eros, nec maximus purus mollis nec. Donec venenatis, arcu vitae iaculis hendrerit, purus ante dapibus enim, non blandit nibh orci sed massa. Donec ut condimentum nulla, non semper nibh. Pellentesque cursus arcu tortor, sed vulputate velit facilisis non. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam eu felis libero. Etiam rutrum aliquet eleifend.\nQuisque venenatis ipsum id pellentesque commodo. Ut congue sapien eu rutrum scelerisque. Nullam ligula diam, ullamcorper molestie nunc sed, consectetur consectetur enim. Phasellus laoreet elementum est, eget luctus nulla finibus ut. In hac habitasse platea dictumst. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec feugiat ipsum luctus elementum malesuada. Morbi blandit sed nibh in gravida. Ut elementum turpis quis tellus imperdiet commodo. Cras nec risus massa. Nulla nibh eros, vulputate a justo in, aliquet maximus risus. Suspendisse eu tempus orci.",
+        "title": "VGG19\nBatch normalisation",
+        "archFilePath": "assets\\vgg19_arch_batch_normalization.svg",
         "confuison_matrix_data": [
             {
-                "name": "1",
+                "name": "0 (No DR)",
                 "data": [
                     {
-                        "x": "1",
-                        "y": 22
+                        "x": "0 (No DR)",
+                        "y": 188
                     },
                     {
-                        "x": "2",
-                        "y": 61
+                        "x": "1 (Mild)",
+                        "y": 1
                     },
                     {
-                        "x": "3",
-                        "y": 110
+                        "x": "2 (Moderate)",
+                        "y": 0
                     },
                     {
-                        "x": "4",
-                        "y": 212
+                        "x": "3 (Severe)",
+                        "y": 0
                     },
                     {
-                        "x": "5",
-                        "y": 24
+                        "x": "4 (Proliferative DR)",
+                        "y": 0
                     }
                 ]
             },
             {
-                "name": "2",
+                "name": "1 (Mild)",
                 "data": [
                     {
-                        "x": "1",
-                        "y": 42
+                        "x": "0 (No DR)",
+                        "y": 15
                     },
                     {
-                        "x": "2",
-                        "y": 6
+                        "x": "1 (Mild)",
+                        "y": 20
                     },
                     {
-                        "x": "3",
-                        "y": 101
+                        "x": "2 (Moderate)",
+                        "y": 5
                     },
                     {
-                        "x": "4",
-                        "y": 112
+                        "x": "3 (Severe)",
+                        "y": 0
                     },
                     {
-                        "x": "5",
-                        "y": 69
+                        "x": "4 (Proliferative DR)",
+                        "y": 0
+                    }
+                ]
+            },
+                
+            {
+                "name": "2 (Moderate)",
+                "data": [
+                    {
+                        "x": "0 (No DR)",
+                        "y": 5
+                    },
+                    {
+                        "x": "1 (Mild)",
+                        "y": 23
+                    },
+                    {
+                        "x": "2 (Moderate)",
+                        "y": 44
+                    },
+                    {
+                        "x": "3 (Severe)",
+                        "y": 16
+                    },
+                    {
+                        "x": "4 (Proliferative DR)",
+                        "y": 2
                     }
                 ]
             },
             {
-                "name": "3",
+                "name": "3 (Severe)",
                 "data": [
                     {
-                        "x": "1",
-                        "y": 21
+                        "x": "0 (No DR)",
+                        "y": 0
                     },
                     {
-                        "x": "2",
-                        "y": 64
-                    },
-                    {
-                        "x": "3",
-                        "y": 10
-                    },
-                    {
-                        "x": "4",
-                        "y": 12
-                    },
-                    {
-                        "x": "5",
-                        "y": 95
-                    }
-                ]
-            },
-            {
-                "name": "4",
-                "data": [
-                    {
-                        "x": "1",
-                        "y": 42
-                    },
-                    {
-                        "x": "2",
-                        "y": 26
-                    },
-                    {
-                        "x": "3",
-                        "y": 97
-                    },
-                    {
-                        "x": "4",
-                        "y": 12
-                    },
-                    {
-                        "x": "5",
-                        "y": 99
-                    }
-                ]
-            },
-            {
-                "name": "5",
-                "data": [
-                    {
-                        "x": "1",
+                        "x": "1 (Mild)",
                         "y": 2
                     },
                     {
-                        "x": "2",
-                        "y": 6
+                        "x": "2 (Moderate)",
+                        "y": 2
                     },
                     {
-                        "x": "3",
-                        "y": 10
+                        "x": "3 (Severe)",
+                        "y": 14
                     },
                     {
-                        "x": "4",
-                        "y": 12
+                        "x": "4 (Proliferative DR)",
+                        "y": 2
+                    }
+                ]
+            },
+            {
+                "name": "4 (Proliferative DR)",
+                "data": [
+                    {
+                        "x": "0 (No DR)",
+                        "y": 2
                     },
                     {
-                        "x": "5",
+                        "x": "1 (Mild)",
+                        "y": 4
+                    },
+                    {
+                        "x": "2 (Moderate)",
+                        "y": 7
+                    },
+                    {
+                        "x": "3 (Severe)",
                         "y": 9
+                    },
+                    {
+                        "x": "4 (Proliferative DR)",
+                        "y": 6
                     }
                 ]
             }

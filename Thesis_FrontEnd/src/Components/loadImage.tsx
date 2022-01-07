@@ -1,9 +1,9 @@
 import { Checkbox, FormControlLabel } from "@mui/material";
 import React, { ChangeEvent, ReactElement, useState} from "react";
 import styled from "styled-components";
-import { ImgContainer } from "./app";
-import { buttonColor, seaThemeColor } from "./configuration";
-import { CenterWrapper } from "./commonComponents";
+import { ImgContainer } from "./appPage";
+import { buttonColor, orangeThemeColor, seaThemeColor } from "./configuration";
+import { Button, CenterWrapper, HorizontalWrapper } from "./commonComponents";
 
 
 type LoadImageProps = {
@@ -41,9 +41,9 @@ const ButtonLoadImage = styled.label`
     border-radius:2em;
     box-sizing: border-box;
     text-decoration:none;
-    font-family:'Roboto',sans-serif;
+    font-family: Helvetica, sans-serif;
     font: 5vmin;
-    color:#FFFFFF;
+    color: #212121;
     text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
     text-align:center;
     transition: all 0.2s;
@@ -56,6 +56,12 @@ const ButtonLoadImage = styled.label`
     &:hover {
         border-color: rgba(255,255,255,1);
     }
+`;
+
+
+const ResetButton = styled(Button)`
+    background-color:${orangeThemeColor};
+
 `;
 
 const DisableDragOver = styled(CenterWrapper)`
@@ -87,8 +93,9 @@ export const LoadImage = (props: LoadImageProps): ReactElement => {
 
     const loadFileHandler = (f: File) => {
         if(possibleTypes.indexOf(f.type) === -1){
+            reset();
+
             setIsCorrectType(false);
-            props.setImgContainer({src: "", file: null});
             return;
         }
         setIsCorrectType(true);
@@ -118,7 +125,7 @@ export const LoadImage = (props: LoadImageProps): ReactElement => {
         e.preventDefault();
         e.stopPropagation();
         if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-            e.dataTransfer.clearData();
+            // e.dataTransfer.clearData();
             loadFileHandler(e.dataTransfer.files[0]);
         }
         setIsFileOver(false);
@@ -130,6 +137,9 @@ export const LoadImage = (props: LoadImageProps): ReactElement => {
         }
     }
 
+    const reset = () => {
+        props.setImgContainer({src: "", file: null});
+    }
 
     return (
         <>
@@ -141,6 +151,7 @@ export const LoadImage = (props: LoadImageProps): ReactElement => {
             <InvisibleInput accept={possibleTypes.join(", ")} type="file" id="img" onChange={handleInputFilesUpload} />
             <FormControlLabel control={<Checkbox checked={props.consent} onChange={(e) => props.setConsent(e.target.checked)} />} label="I consent to save uploaded photo in the database"></FormControlLabel>
             <ButtonLoadImage htmlFor="img">Click to upload image</ButtonLoadImage>
+            <ResetButton onClick={reset}>Reset</ResetButton>
         </>
     )
 }
